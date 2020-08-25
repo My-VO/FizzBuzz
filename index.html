@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Test FizzBuzz</h2>
+
+    Numéro: <input type="number" id="number" value="1" />
+    <p>
+      Cliquez sur le bouton pour afficher le numéro du champ numérique et le
+      résultat.
+    </p>
+
+    <button onclick="myFunction()">Click</button>
+    <p id="numberOutput"></p>
+    <p id="result"></p>
+
+    <script>
+      function myFunction() {
+        const nb = document.getElementById('number').value;
+        document.getElementById('numberOutput').innerHTML = nb;
+
+        const modulo3 = nb % 3;
+        const modulo5 = nb % 5;
+
+        if (modulo3 == 0 && modulo5 == 0) {
+          document.getElementById('result').innerHTML = 'FizzBuzz';
+        } else if (modulo3 == 0) {
+          document.getElementById('result').innerHTML = 'Fizz';
+        } else if (modulo5 == 0) {
+          document.getElementById('result').innerHTML = 'Buzz';
+        } else {
+          document.getElementById('result').innerHTML = nb;
+        }
+      }
+    </script>
+  </body>
+</html>
